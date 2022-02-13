@@ -4,7 +4,7 @@ import axios from 'axios'
 import Countries from './Countries'
 
 const PaymentModal = ({setCart, setShowModal, total}) => {
-	const [error, setError] = useState('')
+	// const [error, setError] = useState('')
     const stripe = useStripe()
     const elements = useElements()
 	const emailRef = useRef('')
@@ -35,7 +35,7 @@ const PaymentModal = ({setCart, setShowModal, total}) => {
 		if(!error){
 			try{
 				const {id} = paymentMethod
-				const res = await axios.post('https://furn-buddy-backend.herokuapp.com/payment', {
+				await axios.post('https://furn-buddy-backend.herokuapp.com/payment', {
 					amount: total * 100,
 					id,
 					receipt_email: emailRef.current.value,
@@ -45,7 +45,7 @@ const PaymentModal = ({setCart, setShowModal, total}) => {
 				setShowModal(false)
 			}catch(err){
 				console.log(err)
-				setError("Could not make Payment")
+				// setError("Could not make Payment")
 			}
     	}
 	}

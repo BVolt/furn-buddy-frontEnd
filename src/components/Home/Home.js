@@ -13,7 +13,7 @@ const Home = () => {
         <button className='btn' onClick={()=>navigate('/products')}>Browse Furniture</button>
       </article>
       <article className='home-img'>
-       <img src={require('../../assets/banner2.jpg')}/>
+       <img src={require('../../assets/banner2.jpg')} alt='home image'/>
       </article>
     </section>
   

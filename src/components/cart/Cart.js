@@ -6,7 +6,6 @@ import Stripe from '../checkout/Stripe';
 
 const Cart = ({cart, setCart}) => {
   const [total, setTotal] = useState(0)
-  const [showItem, setShowItem] = useState(false)
   const [showModal, setShowModal] = useState(false)
 
   const deleteProduct = (id) => {
@@ -15,16 +14,16 @@ const Cart = ({cart, setCart}) => {
     localStorage.setItem('cart', JSON.stringify(newCart))
   }
 
-  const calcTotal = () =>{
-    let tots = 0
-    cart.map(product => {
-        return tots += product.price * product.count
-      })
-    setTotal(tots)
-  }
-
   useEffect(()=>{
-      calcTotal()
+    const calcTotal = () =>{
+      let tots = 0
+      cart.map(product => {
+          return tots += product.price * product.count
+        })
+      setTotal(tots)
+    }
+
+    calcTotal()
   }, [cart])
 
   return <>

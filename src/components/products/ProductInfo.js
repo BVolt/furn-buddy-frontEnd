@@ -67,7 +67,7 @@ const ProductInfo = ({cart, setCart}) => {
       console.log(err)
       setLoading(false)
     }
-  },[])
+  },[id])
 
   if(loading){
     return <h1>Loading...</h1>
