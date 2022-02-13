@@ -1,23 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from './components/Home/Home'
+import Products from './components/products/Products'
+import Navbar from './components/Nav/Navbar'
+import React, {useState} from 'react'
+import {Route, Routes} from 'react-router-dom'
+import ProductInfo from './components/products/ProductInfo'
+import Cart from './components/cart/Cart'
+
+if (!localStorage.getItem('cart')){
+  let array = [];
+  localStorage.setItem('cart', JSON.stringify(array));
+}
 
 function App() {
+  const [cart, setCart] = useState(JSON.parse(localStorage.getItem('cart')))
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar/>
+      <Routes>
+        <Route exact path='/' element={<Home />}></Route>
+        <Route exact path='/products' element={<Products/>}></Route>
+        <Route exact path='/cart' element={<Cart cart={cart} setCart={setCart}/>}></Route>
+        <Route exact path='/products/:id' element={<ProductInfo  cart={cart} setCart={setCart}/>}></Route>
+      </Routes>
     </div>
   );
 }

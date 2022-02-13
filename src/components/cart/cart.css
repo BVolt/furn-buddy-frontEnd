@@ -1,0 +1,47 @@
+.cart{
+    margin: 10px;
+}
+  
+.cart-item{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 0;
+    text-align: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.item-title{
+    display: flex;
+    align-items: center;
+}
+
+.item-title img{
+    max-height: 120px;
+    max-width: 150px;
+    object-fit: cover;
+}
+
+.del{
+    margin: 0;
+    background-color: transparent;
+    border: none;
+    border-radius: .5rem;
+}
+
+.del:hover{
+    cursor: pointer;
+}
+
+.delIcon:hover{
+    color: red;
+    transition: 1s ease;
+    transform: scale(1.1);
+}
+
+.checkout{
+    float: right;
+    border: 1px solid grey;
+    padding: 25px;
+}

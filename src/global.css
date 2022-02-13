@@ -1,0 +1,75 @@
+/*App*/
+*{
+  /* box-sizing:border-box; */
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: white;
+}
+
+.App{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.item-count{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 50px;
+}
+
+.item-count button{
+  background-color: inherit;
+  border: none;
+}
+
+.item-count button:hover{
+  cursor: pointer;
+}
+
+
+.banner{
+  display: flex;
+  width: 100%;
+  background: 
+    linear-gradient(to top, rgba(0,0,0,.1),rgba(214, 149, 28, .3)), 
+    url('./assets/banner.jpg') no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  /* background-position-y: -40vh; */
+  /* background-size: 100% 80% ; */
+  background-size: cover;
+  height: 200px;
+  align-items: center;
+  padding-left: 25px;
+  color:white;
+}
+
+.banner a{
+  color: white;
+}
+
+.btn{
+  color: white;
+  background-color: #d6951c;
+  border: none;
+  border-radius: .2rem;
+  padding: .5rem;
+}
+
+.btn:hover{
+  cursor: pointer;
+  background-color: wheat;
+}
+
+h5{
+  color:#d6951c
+}
+

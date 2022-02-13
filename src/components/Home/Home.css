@@ -1,0 +1,32 @@
+.welcome{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 10px;
+    align-items: center;
+    height: calc(100vh - 90px);
+  }
+  
+  .home-intro{
+    line-height: 2;
+  }
+  
+  .home-intro h1{
+    font-size: 2rem;
+  }
+  
+  @media screen and (max-width:950px) {
+    .welcome{
+      grid-template-columns: repeat(1, 1fr) ;
+      margin: 50px;
+      height: 60vh;
+    }
+    .home-img{
+      display: none;
+    }
+  }
+  
+  .home-img img{
+    width:100%;
+    border-radius: .5rem;
+  }
+  

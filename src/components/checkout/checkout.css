@@ -1,0 +1,38 @@
+.stripe-modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0,0,0,.4);
+  }
+  
+  .modal-content{
+    background-color: white;
+    box-shadow: 1px 1px 1px 1px grey;
+    width: 300px;
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    border: solid 20px;
+    border-color: white;
+  }
+  
+  .modal-content form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100%;
+  }
+  
+  .stripe-input{
+    width: 90%;
+    border: none;
+    outline: none;
+    background-color:white ;
+  }
