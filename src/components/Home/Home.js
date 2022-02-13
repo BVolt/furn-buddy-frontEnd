@@ -12,7 +12,7 @@ const Home = () => {
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias, corrupti nobis! Ad maiores culpa repellendus rem quae repudiandae sed, nam recusandae, dolor vel neque sint hic voluptate excepturi aliquid deserunt minima? Consequuntur sapiente eligendi molestiae. Voluptates veniam doloribus ea corrupti?</p>
         <button className='btn' onClick={()=>navigate('/products')}>Browse Furniture</button>
       </article>
-      <article className='home-img'>
+      <article className='home'>
        <img src={require('../../assets/banner2.jpg')} alt='home image'/>
       </article>
     </section>

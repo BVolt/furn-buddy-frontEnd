@@ -1,4 +1,4 @@
-import React, {useState, useRef} from 'react'
+import React, {useRef} from 'react'
 import {CardElement, useElements, useStripe} from '@stripe/react-stripe-js'
 import axios from 'axios'
 import Countries from './Countries'
