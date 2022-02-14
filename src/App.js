@@ -5,6 +5,7 @@ import React, {useState} from 'react'
 import {Route, Routes} from 'react-router-dom'
 import ProductInfo from './components/products/ProductInfo'
 import Cart from './components/cart/Cart'
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 if (!localStorage.getItem('cart')){
   let array = [];

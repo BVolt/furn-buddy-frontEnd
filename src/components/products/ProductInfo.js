@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import {useParams} from 'react-router-dom'
 import './products.css'
 import Banner from '../Banner'
+import { TailSpin } from  'react-loader-spinner'
 
 const url = 'https://furn-buddy-backend.herokuapp.com/api/products/id/'
 
@@ -59,37 +60,43 @@ const ProductInfo = ({cart, setCart}) => {
   }
 
   useEffect(()=>{
+    setLoading(true)
     try{
-      setLoading(true)
-      fetch(url+id).then(res=>res.json()).then(obj=>setProduct(obj.products[0]))
-      setLoading(false)
+      fetch(url+id).then(res=>res.json()).then(obj=>{
+        setProduct(obj.products[0])
+        setLoading(false)
+        })
+
     }catch(err){
       console.log(err)
       setLoading(false)
     }
   }, [id])
 
-  if(loading){
-    return <h1>Loading...</h1>
-  }
   return <>
     <Banner location={`/${product.name}`}/>
-    <div className='product-info'>
-            <div className='info-image'>
-              <img src={product.image} alt='product'></img>
-            </div>
-            <div className='descriptors'>
-              <h2>{product.name}</h2>
-              <p>{product.desc}</p>
-              <h5>${product.price}</h5>
-              <div className='item-count'>
-                <button onClick={decrement}>-</button> 
-                <h3>{count}</h3>
-                <button onClick={increment}>+</button>
-              </div>
-              <button className='btn' onClick={addToCart}>Add to Cart</button>
-            </div>
+    {!loading ?
+      <div className='product-info'>
+                <div className='info-image'>
+                  <img src={product.image} alt='product'></img>
+                </div>
+                <div className='descriptors'>
+                  <h2>{product.name}</h2>
+                  <p>{product.desc}</p>
+                  <h5>${product.price}</h5>
+                  <div className='item-count'>
+                    <button onClick={decrement}>-</button> 
+                    <h3>{count}</h3>
+                    <button onClick={increment}>+</button>
+                  </div>
+                  <button className='btn' onClick={addToCart}>Add to Cart</button>
+                </div>
+      </div>
+    :
+    <div >
+      <TailSpin color="#d6951c" height={80} width={80} />
     </div>
+    }
   </>
 };
 
