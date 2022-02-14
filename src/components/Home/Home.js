@@ -1,5 +1,6 @@
 import React from 'react';
 import {useNavigate} from 'react-router-dom'
+import Footer from '../footer/Footer'
 import './Home.css'
 
 const Home = () => {
@@ -16,7 +17,7 @@ const Home = () => {
        <img src={require('../../assets/banner2.jpg')} alt='home'/>
       </article>
     </section>
-  
+    <Footer/>
   </div>;
 };
 
